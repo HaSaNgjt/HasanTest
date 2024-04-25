@@ -6,16 +6,7 @@ from telethon.tl.functions.contacts import GetContactsRequest
 from telethon.tl.functions.messages import DeleteHistoryRequest, ReportSpamRequest
 from telethon.tl.functions.contacts import BlockRequest
 
-api_id = "22851446"
-api_hash = "742f1f7aef2a98ff75bbf6e77bf590a5"
-
-print(' Code Will Run .. Wait ')
-print('  ')
-
-SESSION = "1ApWapzMBu6J1tTN7V7wno1QJzsAxlj2Smp6DGWYrRFU341pOImn4cIsc0eBz7c4ARg4zXAaONrc0oTkiepC_skhnh9H39GkcDiTx0H-5GgHqbHckTm7BufCUvGlzAJYJkn-fd17-GkdBimlrEQYOBDj-CvPOGvdEaZRTEjf-bB4tsj8_rj_Mu-IAO8U6CnD9Kk73Lh71Vb7DSpQkqXFQyubezYxWQmb-hIeUCr0V5j0SPayJUpI_mW2rJDkUw-Upfir5tEscVbO47AV04xAKnP1XIOdFHTobiblWBy4dsr82IchxegULVma0sH3INhQNSZyFhCC91kMGti2035Tadv-pVxooCPs="
-
-Hson = TelegramClient(StringSession(SESSION), api_id, api_hash)
-
+Hson.start()
 async def is_contact(user_id):
     contacts = await Hson(GetContactsRequest(0))
     return any(user.id == user_id for user in contacts.users)
